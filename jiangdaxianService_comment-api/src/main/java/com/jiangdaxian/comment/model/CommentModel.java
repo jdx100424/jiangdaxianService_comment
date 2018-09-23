@@ -1,85 +1,75 @@
-package com.jiangdaxian.comment.mongo;
+package com.jiangdaxian.comment.model;
 
 import java.io.Serializable;
 import java.util.Date;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
-
-@Document(collection = "articleCommentMongo")
-public class ArticleCommentMongo implements Serializable {
-	
-
-	
+public class CommentModel implements Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
+	private String id;
+
+	/**
+	 * 评论模块类型
+	 */
+	private Integer type;
 	
 	/**
-	 * 文章ID
+	 * 该类型数据相关ID
 	 */
-	@Field(value = "articleId")
-	private Long articleId;
-	
+	private Long itemId;
+
 	/**
 	 * 评论内容
 	 */
-	@Field(value = "content")
 	private String content;
-	
+
 	/**
 	 * 用户头像URL
 	 */
-	@Field(value = "headImage")
 	private String headImage;
-	
+
 	/**
 	 * 用户ID
 	 */
-	@Field(value = "userId")
 	private Long userId;
-	
+
 	/**
 	 * 用户昵称
 	 */
-	@Field(value = "nickName")
 	private String nickName;
-	
+
 	/**
 	 * 引用评论的ID
 	 */
-	@Field(value = "referenceId")
 	private String referenceId;
 
-	@Field(value = "createTime")
 	private Date createTime;
-	
-	@Field(value = "createBy")
+
 	private Long createBy;
-	
-	@Field(value = "updateTime")
+
 	private Date updateTime;
-	
-	@Field(value = "updateBy")
+
 	private Long updateBy;
 
-	protected String id;
-
-	public String getId() {
-		return id;
+	
+	
+	public Integer getType() {
+		return type;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setType(Integer type) {
+		this.type = type;
 	}
 
-	public Long getArticleId() {
-		return articleId;
+	public Long getItemId() {
+		return itemId;
 	}
 
-	public void setArticleId(Long articleId) {
-		this.articleId = articleId;
+	public void setItemId(Long itemId) {
+		this.itemId = itemId;
 	}
 
 	public String getContent() {
@@ -112,6 +102,14 @@ public class ArticleCommentMongo implements Serializable {
 
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getReferenceId() {
@@ -153,6 +151,5 @@ public class ArticleCommentMongo implements Serializable {
 	public void setUpdateBy(Long updateBy) {
 		this.updateBy = updateBy;
 	}
-	
-	
+
 }

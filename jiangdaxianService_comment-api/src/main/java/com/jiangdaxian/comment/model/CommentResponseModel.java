@@ -2,30 +2,63 @@ package com.jiangdaxian.comment.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
-public class ArticleCommentResponseModel implements Serializable {
+public class CommentResponseModel implements Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	// 引用的其他评论
-	private ArticleCommentResponseModel subArticleCommentResponseModel;
-
-	public ArticleCommentResponseModel getSubArticleCommentResponseModel() {
-		return subArticleCommentResponseModel;
+	//评论回复集合
+	private List<CommentReplyModel> commentReplyModelList;
+	
+	public List<CommentReplyModel> getCommentReplyModelList() {
+		return commentReplyModelList;
 	}
 
-	public void setSubArticleCommentResponseModel(ArticleCommentResponseModel subArticleCommentResponseModel) {
-		this.subArticleCommentResponseModel = subArticleCommentResponseModel;
+	public void setCommentReplyModelList(List<CommentReplyModel> commentReplyModelList) {
+		this.commentReplyModelList = commentReplyModelList;
+	}
+
+	// 引用的其他评论
+	private CommentResponseModel subCommentResponseModel;
+
+	public CommentResponseModel getSubCommentResponseModel() {
+		return subCommentResponseModel;
+	}
+
+	public void setSubCommentResponseModel(CommentResponseModel subCommentResponseModel) {
+		this.subCommentResponseModel = subCommentResponseModel;
 	}
 
 	private String id;
 
 	/**
-	 * 文章ID
+	 * 
 	 */
-	private Long articleId;
+	private Long ItemId;
+
+	
+	private Integer type;
+	
+	
+	
+	public Long getItemId() {
+		return ItemId;
+	}
+
+	public void setItemId(Long itemId) {
+		ItemId = itemId;
+	}
+
+	public Integer getType() {
+		return type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
+	}
 
 	/**
 	 * 评论内容
@@ -59,14 +92,6 @@ public class ArticleCommentResponseModel implements Serializable {
 	private Date updateTime;
 
 	private Long updateBy;
-
-	public Long getArticleId() {
-		return articleId;
-	}
-
-	public void setArticleId(Long articleId) {
-		this.articleId = articleId;
-	}
 
 	public String getContent() {
 		return content;

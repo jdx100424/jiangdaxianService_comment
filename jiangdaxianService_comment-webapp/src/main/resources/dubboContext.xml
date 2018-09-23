@@ -23,7 +23,7 @@
 	<!-- 指定传输层通信协议 -->
 
 	<!-- 暴露你的服务地址 -->
-	<dubbo:service ref="articleCommentDubbo" interface="com.jiangdaxian.comment.api.ArticleCommentApi"
+	<dubbo:service ref="commentDubbo" interface="com.jiangdaxian.comment.api.CommentApi"
 		protocol="dubbo" version="1.0.0" />
 		
 	<dubbo:provider filter="baseInfoContextFilter" />     	

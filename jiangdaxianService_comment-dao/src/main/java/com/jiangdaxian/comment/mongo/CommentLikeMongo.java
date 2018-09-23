@@ -6,8 +6,8 @@ import java.util.Date;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-@Document(collection = "articleCommentLikeMongo")
-public class ArticleCommentLikeMongo implements Serializable {
+@Document(collection = "commentLikeMongo")
+public class CommentLikeMongo implements Serializable {
 	protected String id;
 
 	public String getId() {
